@@ -9,16 +9,8 @@
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
     <body>
-        <header class="header">
-            <div class="header__logo">Diabelens</div>
-            <nav class="header__navigasi">
-                <a href="#" class="navigasi__item aktif">Home</a>
-                <a href="#" class="navigasi__item">Fitur</a>
-                <a href="#" class="navigasi__item">Tutorial</a>
-            </nav>
-            <button class="header__tombol-masuk btn-primary">Masuk/Daftar</button>
-        </header>
-        <section class="bagian-hero">
+        @include('navbar')
+        <section class="bagian-hero" id="home">
             <div class="hero__konten">
                 <h1 class="hero__judul">Kelola Diabetes Lebih Mudah, Cepat, dan Terarah dengan <span class="hero__judul-highlight">Diabelens</span></h1>
                 <p class="hero__deskripsi">Sistem manajemen pasien diabetes yang membantu fasilitas kesehatan mengelola pasien secara terintegrasi dan memberikan kemudahan pasien mengakses layanan terbaik.</p>
@@ -38,7 +30,7 @@
                 <p class="penjelasan__deskripsi">Pendekatan terpadu untuk pasien diabetes menuntut fasilitas kesehatan untuk memiliki sistem yang cepat, akurat, dan terintegrasi. Dengan Diabelens, kualitas layanan meningkat, dan penanganan pasien merasakan ketika dokter menggunakan teknologi AI.</p>
             </div>
         </section>
-        <section class="bagian-fitur section">
+        <section class="bagian-fitur section"id="fitur">
             <!-- Judul dan Subjudul menggunakan kelas baru -->
             <h2 class="fitur__judul section-title">Fitur</h2>
             <p class="fitur__subjudul section-subtitle">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -59,7 +51,7 @@
                 </div>
             </div>
         </section>
-        <section class="bagian-tutorial section section--dark">
+        <section class="bagian-tutorial section section--dark" id="tutorial">
             <!-- Judul dan Subjudul menggunakan kelas baru, warna diatur oleh section--dark -->
             <h2 class="tutorial__judul section-title">Tutorial</h2>
             <p class="tutorial__subjudul section-subtitle">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
@@ -139,4 +131,126 @@
             &copy; 2024 Diabelens. Semua Hak Dilindungi.
         </div>
     </footer>
+    
+<!-- -------------------------------------------------
+============ (Pop-up Card) Login/Register ============
+-------------------------------------------------  -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="auth-card">
+            <button class="close-btn" id="close-modal-btn">&times;</button>
+            
+            <!-- Form Login -->
+            <form class="form-login" id="login-form">
+                <h2>Login ke Diabelens</h2>
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder="Alamat Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-input" placeholder="Kata Sandi" required>
+                </div>
+                <button type="submit" class="form-submit-btn btn-primary">Masuk</button>
+                <div class="form-link-switch">
+                    Belum punya akun? <a href="#" id="switch-to-register">Daftar Sekarang</a>
+                </div>
+            </form>
+
+            <!-- Form Register -->
+            <form class="form-register" id="register-form">
+                <h2>Daftar Akun Baru</h2>
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="Nama Lengkap" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder="Alamat Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-input" placeholder="Kata Sandi (min. 6 karakter)" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-input" placeholder="Konfirmasi Kata Sandi" required>
+                </div>
+                <button type="submit" class="form-submit-btn btn-primary">Daftar</button>
+                <div class="form-link-switch">
+                    Sudah punya akun? <a href="#" id="switch-to-login">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript untuk Logika Modal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const openModalBtn = document.getElementById('open-modal-btn');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const authModal = document.getElementById('auth-modal');
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const switchToRegisterLink = document.getElementById('switch-to-register');
+            const switchToLoginLink = document.getElementById('switch-to-login');
+
+            // --- Fungsi untuk Mengontrol Modal ---
+            const openModal = () => {
+                authModal.classList.add('open');
+                document.body.style.overflow = 'hidden'; // Mencegah scroll pada body
+            };
+
+            const closeModal = () => {
+                authModal.classList.remove('open');
+                document.body.style.overflow = ''; // Mengizinkan scroll kembali
+            };
+
+            // Event Listeners untuk Buka/Tutup Modal
+            openModalBtn.addEventListener('click', openModal);
+            closeModalBtn.addEventListener('click', closeModal);
+
+            // Tutup modal jika mengklik di luar card
+            authModal.addEventListener('click', (e) => {
+                if (e.target === authModal) {
+                    closeModal();
+                }
+            });
+
+            // Tutup modal jika tombol ESC ditekan
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && authModal.classList.contains('open')) {
+                    closeModal();
+                }
+            });
+
+            // --- Fungsi untuk Mengganti Form ---
+            const showLoginForm = (e) => {
+                if (e) e.preventDefault();
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+            };
+
+            const showRegisterForm = (e) => {
+                if (e) e.preventDefault();
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+            };
+
+            // Event Listeners untuk Ganti Form
+            switchToRegisterLink.addEventListener('click', showRegisterForm);
+            switchToLoginLink.addEventListener('click', showLoginForm);
+
+            // Pastikan form login yang ditampilkan saat pertama kali modal dibuka
+            showLoginForm();
+
+            // --- Logika Dummy Form Submission ---
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                console.log("Login form submitted (Dummy)");
+                alert("Login berhasil (simulasi).");
+                closeModal();
+            });
+
+            registerForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                console.log("Register form submitted (Dummy)");
+                alert("Pendaftaran berhasil (simulasi).");
+                closeModal();
+            });
+        });
+    </script>
 </html>

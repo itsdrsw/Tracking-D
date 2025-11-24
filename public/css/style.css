@@ -29,8 +29,13 @@
 
     /* Layout */
     --spacing-base: 20px;
-    --section-padding: 80px 80px;
+    --section-padding: 70px 70px;
     --container-padding-desktop: 40px 40px;
+    --header-height:80px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -102,10 +107,16 @@ a { text-decoration: none; color: inherit; }
 ========== NAVBAR & HEADER ==========
 --------------------------------- */
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-base);
+    padding: 15px var(--spacing-base);
     background-color: var(--color-card-bg);
     box-shadow: var(--color-shadow-light);
 }
@@ -150,6 +161,171 @@ a { text-decoration: none; color: inherit; }
     object-fit: cover;
 }
 
+/* ------------------------------
+========== MENU ITEMS ============
+----------------------------- */
+.page-menu {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.menu-item img {
+    width: 50px;
+    height: 50px;
+}
+
+.menu-item span {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #444;
+}
+
+.menu-item.active span {
+    font-weight: 600;
+    color: #007BFF;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+/* ========== OPSI FORM MENU ========= */
+.checkbox-group label,
+.form__label {
+    display: block;
+    font-weight: 200;
+    margin-bottom: 6px;
+    margin-top: 12px;
+}
+
+
+/* ------------------------------------------------
+========== MODAL & FORM AUTENTIKASI BARU ==========
+--------------------------------------------------- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .auth-card {
+            background-color: var(--color-card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: var(--color-shadow-large);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+            position: relative;
+        }
+
+        .modal-overlay.open .auth-card {
+            transform: translateY(0);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--color-text-mid);
+            transition: color 0.2s;
+        }
+        .close-btn:hover {
+            color: var(--color-text-dark);
+        }
+
+        .auth-card h2 {
+            font-size: var(--font-size-title-4);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary-dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Input dan Tombol Form */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: var(--font-size-base);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-input:focus {
+            border-color: var(--color-primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 168, 232, 0.15);
+        }
+
+        .form-submit-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: var(--font-size-large);
+            margin-top: 10px;
+        }
+
+        .form-link-switch {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--color-text-mid);
+        }
+        .form-link-switch a {
+            color: var(--color-primary);
+            font-weight: var(--font-weight-semibold);
+            cursor: pointer;
+        }
+
+        /* Form Toggling */
+        .form-register {
+            display: none;
+        }
+        
+        /* RESPONSIVE untuk Modal */
+        @media (max-width: 500px) {
+            .auth-card {
+                padding: 20px;
+            }
+            .auth-card h2 {
+                font-size: 22px;
+            }
+        }
 
 /* -----------------------------
 ========== HERO & CONTENT SECTIONS ==========
@@ -188,7 +364,6 @@ a { text-decoration: none; color: inherit; }
     padding: 12px 30px;
     font-size: var(--font-size-base);
 }
-
 
 /* -----------------------------
 ========== Penjelasan ==========
@@ -384,19 +559,25 @@ a { text-decoration: none; color: inherit; }
 /* -------------------------------------------
 ========== FITUR PAGE  ==========
 ------------------------------------------- */
-
 .bagian-fitur-utama {
     padding: 40px 80px;
     background-color: transparent;
 }
 
+.container-salam-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
 .salam-pengguna {
+    max-width: 900px;
     margin-bottom: 40px;
     padding: 0 10px;
 }
 
 .salam__judul {
-    font-size: var(--font-size-title-3);
     font-weight: var(--font-weight-bold);
     margin-bottom: 10px;
 }
