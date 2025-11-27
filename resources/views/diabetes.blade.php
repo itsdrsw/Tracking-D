@@ -12,7 +12,7 @@
         <main class="bagian-fitur-utama">
             <div class="container-salam-menu">
                 <div class="salam-pengguna">
-                    <h1 class="salam__judul">Selamat Datang, <span class="hero__judul-highlight">Shabri</span></h1>
+                    <h1 class="hero__judul-highlight">Cek Diabetes</h1>
                     <p class="salam__deskripsi">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
                 </div>
                 <div class="page-menu">
@@ -48,8 +48,8 @@
                     </form> 
                 </div>
                 <div class="kolom-hasil-ai card-container">
-                    <div class="hasil-ai__konten">
-                        <h2 class="hasil-ai__judul">Bagus!!</h2>
+                    <div class="hasil-ai__konten_good">
+                        <h2 class="hasil-ai__judul_good">Bagus!!</h2>
                         <p class="hasil-ai__deskripsi">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
                     </div>
                     <div class="hasil-ai__gambar">
