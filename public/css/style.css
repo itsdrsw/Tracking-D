@@ -172,7 +172,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ------------------------------
-========== MENU ITEMS ============
+========== MENU ITEMS (umum) ============
 ----------------------------- */
 .page-menu {
     display: flex;
@@ -209,16 +209,6 @@ a { text-decoration: none; color: inherit; }
 .menu-item:hover {
     transform: scale(1.05);
 }
-
-/* ========== OPSI FORM MENU ========= */
-.checkbox-group label,
-.form__label {
-    display: block;
-    font-weight: 200;
-    margin-bottom: 6px;
-    margin-top: 12px;
-}
-
 
 /* ------------------------------------------------
 ========== MODAL & FORM AUTENTIKASI ==========
@@ -567,63 +557,67 @@ a { text-decoration: none; color: inherit; }
     color: #888;
 }
 
-/* -------------------------------------------
-========== FITUR PAGE  ==========
-------------------------------------------- */
-.bagian-fitur-utama {
-    padding: 40px 80px;
+/* --------------------------------------------------------
+====================== MENU DIABETES ======================
+-------------------------------------------------------- */
+.container-utama-diabetes {
+    padding: 40px;
     background-color: transparent;
 }
 
-.container-salam-menu {
+.container-menu-diabetes {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin-bottom: 30px; */
 }
 
-.salam-pengguna {
+.container-judul-menu-diabetes {
     max-width: 900px;
     margin-bottom: 40px;
     padding: 0 10px;
 }
 
-.salam__judul {
-    font-weight: var(--font-weight-bold);
-    margin-bottom: 10px;
+.judul-menu-diabetes {
+    color: var(--color-blue);
 }
 
-.salam__deskripsi {
+.deskripsi__menu-diabetes {
     font-size: var(--font-size-base);
     color: var(--color-text-mid);
 }
 
-.wadah-prediksi {
+/* ===== Form Diabtes (Kiri) ===== */
+.container-form-diabetes{
     display: flex;
-    gap: 30px;
+    gap: 40px;
 }
-
-/* Kolom Kiri: Formulir */
-.kolom-input-form {
-    flex: 2; /* Mengambil 2/3 lebar */
+.kolom-input-form-diabetes {
+    flex: 2;
     padding: 30px;
     border-radius: 15px;
     box-shadow: var(--color-shadow-large);
 }
 
-.form__judul {
+.card-diabetes {
+    background-color: var(--color-card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+.form__judul-diabetes {
     font-size: var(--font-size-title-4);
     font-weight: var(--font-weight-semibold);
     margin-bottom: 5px;
 }
 
-.form__deskripsi {
+.form__deskripsi-diabetes {
     font-size: 14px;
     color: var(--color-text-light);
     margin-bottom: 25px;
 }
 
-.form__input {
+.form__input-diabetes {
     width: 100%;
     padding: 15px 20px;
     margin-bottom: 15px;
@@ -634,15 +628,15 @@ a { text-decoration: none; color: inherit; }
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.form__input:focus {
+.form__input-diabetes:focus {
     border-color: var(--color-blue);
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.2);
 }
 
-/* Kolom Kanan: Hasil AI */
-.kolom-hasil-ai {
-    flex: 1; /* Mengambil 1/3 lebar */
+/* ===== Kolom Hasil AI (kanan)===== */
+.kolom-hasil-ai-diabetes {
+    flex: 1;
     padding: 30px;
     border-radius: 15px;
     box-shadow: var(--color-shadow-large);
@@ -654,7 +648,21 @@ a { text-decoration: none; color: inherit; }
     overflow: hidden;
 }
 
-.hasil-ai__konten_good {
+.card-ai-diabetes {
+    background-color: var(--color-card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+.hasil-ai-diabetes__judul_good {
+    font-size: 30px;
+    font-weight: var(--font-weight-extrabold);
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.hasil-ai-diabetes__konten_good {
     background-color: #e0fff0;
     width: calc(100% + 60px);
     margin: -30px -30px 20px -30px;
@@ -665,13 +673,14 @@ a { text-decoration: none; color: inherit; }
     z-index: 10;
 }
 
-.hasil-ai__judul_good {
+.hasil-ai-diabetes__judul_bad {
     font-size: 30px;
     font-weight: var(--font-weight-extrabold);
-    color: #4CAF50;
+    color: #F44336;
     margin-bottom: 10px;
 }
-.hasil-ai__konten_bad {
+
+.hasil-ai-diabetes__konten_bad {
     background-color: #FFDCDA;
     width: calc(100% + 60px);
     margin: -30px -30px 20px -30px;
@@ -682,26 +691,166 @@ a { text-decoration: none; color: inherit; }
     z-index: 10;
 }
 
-.hasil-ai__judul_bad {
+.hasil-ai-diabetes__deskripsi {
+    font-size: 14px;
+    color: var(--color-text-mid);
+    margin-bottom: var(--spacing-base);
+}
+
+.hasil-ai-diabetes__gambar {
+    max-width: fit-content;
+    height: auto;
+    margin: 10px 0 20px 0;
+}
+
+.hasil-ai-diabetes__tombol-generate {
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-medium);
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+/* -----------------------------------------------------
+==================== MENU LIFESTYLE ====================
+----------------------------------------------------- */
+.container-utama-lifestyle {
+    padding: 40px;
+    background-color: transparent;
+}
+
+.container-menu-lifestyle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-judul-menu-lifestyle {
+    max-width: 900px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+}
+
+.judul-menu-lifestyle {
+    color: var(--color-blue);
+}
+
+.deskripsi__menu-lifestyle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-mid);
+}
+
+/* ===== Form Lifestyle (Kiri) ===== */
+.container-form-lifestyle{
+    display: flex;
+    gap: 40px;
+}
+.kolom-input-form-lifestyle {
+    flex: 2;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--color-shadow-large);
+}
+
+.card-lifestyle {
+    background-color: var(--color-card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+.form__judul-lifestyle {
+    font-size: var(--font-size-title-4);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 5px;
+}
+
+.form__deskripsi-lifestyle {
+    font-size: 14px;
+    color: var(--color-text-light);
+    margin-bottom: 25px;
+}
+
+.checkbox-group-lifestyle label,
+.form__label-lifestyle {
+    display: block;
+    font-weight: 200;
+    margin-bottom: 6px;
+    margin-top: 12px;
+}
+
+/* ===== Kolom Hasil AI (kanan)===== */
+.kolom-hasil-ai-lifestyle {
+    flex: 1;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--color-shadow-large);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-ai-lifestyle {
+    background-color: var(--color-card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+.hasil-ai-lifestyle__judul_good {
+    font-size: 30px;
+    font-weight: var(--font-weight-extrabold);
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.hasil-ai-lifestyle__konten_good {
+    background-color: #e0fff0;
+    width: calc(100% + 60px);
+    margin: -30px -30px 20px -30px;
+    padding: 30px;
+    padding-bottom: 10px;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+    z-index: 10;
+}
+
+.hasil-ai-lifestyle__judul_bad {
     font-size: 30px;
     font-weight: var(--font-weight-extrabold);
     color: #F44336;
     margin-bottom: 10px;
 }
 
-.hasil-ai__deskripsi {
+.hasil-ai-lifestyle__konten_bad {
+    background-color: #FFDCDA;
+    width: calc(100% + 60px);
+    margin: -30px -30px 20px -30px;
+    padding: 30px;
+    padding-bottom: 10px;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+    z-index: 10;
+}
+
+.hasil-ai-lifestyle__deskripsi {
     font-size: 14px;
     color: var(--color-text-mid);
     margin-bottom: var(--spacing-base);
 }
 
-.hasil-ai__gambar {
+.hasil-ai-lifestyle__gambar {
     max-width: fit-content;
     height: auto;
     margin: 10px 0 20px 0;
 }
 
-.hasil-ai__tombol-generate {
+.hasil-ai-lifestyle__tombol-generate {
     width: 100%;
     padding: 12px 0;
     border-radius: 8px;
@@ -711,23 +860,132 @@ a { text-decoration: none; color: inherit; }
     margin-bottom: 10px;
 }
 
-/* ------------------------------
-============ PROFILE ============
------------------------------- */
+/* ------------------------------------------------------
+======================== PROFILE ========================
+------------------------------------------------------- */
+.container-utama-profile {
+    padding: 40px;
+    background-color: transparent;
+}
 
-.btn_ganti-password {
+.container-menu-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-judul-menu-profile {
+    max-width: 900px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+}
+
+.judul-menu-profile {
+    color: var(--color-blue);
+}
+
+.deskripsi__menu-profile {
+    font-size: var(--font-size-base);
+    color: var(--color-text-mid);
+}
+
+/* ===== Form Profile (Kiri) ===== */
+.container-form-profile{
+    display: flex;
+    gap: 40px;
+}
+.kolom-input-form-profile{
+    flex: 2;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--color-shadow-large);
+}
+
+.card-profile {
+    background-color: var(--color-card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+.form__judul-profile {
+    font-size: var(--font-size-title-4);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 5px;
+}
+
+.form__deskripsi-profile {
+    font-size: 14px;
+    color: var(--color-text-light);
+    margin-bottom: 25px;
+}
+
+.form__input-profile {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: var(--font-size-base);
+    color: var(--color-text-dark);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form__input-profile:focus {
+    border-color: var(--color-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.2);
+}
+
+/* ===== Kolom Hasil AI (kanan)===== */
+.kolom-foto-profile {
+    flex: 1;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--color-shadow-large);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-foto-profile {
+    background-color: var(--color-card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+.foto-profile {
+    max-width: fit-content;
+    height: auto;
+    margin: 10px 0 20px 0;
+}
+
+.btn-ganti-profile {
     width: 100%;
     padding: 12px 0;
     border-radius: 8px;
     font-size: var(--font-size-large);
     font-weight: var(--font-weight-medium);
     margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.btn-ganti-password {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-medium);
     margin-bottom: 10px;
 }
 
 .btn-simpan {
     width: 200px; 
     padding: 12px 30px;
+    border-radius: 8px;
     margin-top: 20px;
     font-size: var(--font-size-large);
 }
@@ -757,7 +1015,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* dropdown */
-.form__select {
+.form__select-profile {
     /* Menggunakan gaya yang sama dengan form__input */
     width: 100%;
     padding: 15px 20px;
@@ -783,7 +1041,7 @@ a { text-decoration: none; color: inherit; }
     margin-bottom: 15px;
 }
 
-.form-group-with-icon .form__input {
+.form-group-with-icon .form__input-profile {
     padding-right: 50px; /* Sisakan ruang untuk ikon */
     margin-bottom: 0; 
 }

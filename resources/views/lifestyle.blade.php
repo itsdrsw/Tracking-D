@@ -9,11 +9,11 @@
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
     <body>
-        <main class="bagian-fitur-utama">
-            <div class="container-salam-menu">
-                <div class="salam-pengguna">
-                    <h1 class="hero__judul-highlight">Cek Gaya Hidup</h1>
-                    <p class="salam__deskripsi">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+        <main class="container-utama-lifestyle">
+            <div class="container-menu-lifestyle">
+                <div class="container-judul-menu-lifestyle">
+                    <h1 class="judul-menu-lifestyle">Cek Gaya Hidup</h1>
+                    <p class="deskripsi__menu-lifestyle">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
                 </div>
                 <div class="page-menu">
                     <div class="menu-item" onclick="window.location='{{ route('diabetes.page') }}'">
@@ -32,17 +32,17 @@
                     </div>
                 </div>
             </div>
-            <div class="wadah-prediksi">
-                <div class="kolom-input-form card-container">
+            <div class="container-form-lifestyle">
+                <div class="kolom-input-form-lifestyle card-lifestyle">
                     <form action="#" method="POST" class="form-prediksi" id="form-prediksi">
-                        <h2 class="form__judul">Formulir Gaya Hidup</h2>
-                        <p class="form__deskripsi">
+                        <h2 class="form__judul-lifestyle">Formulir Gaya Hidup</h2>
+                        <p class="form__deskripsi-lifestyle">
                             Pilih data gaya hidup kamu untuk dianalisis oleh sistem.
                         </p>
 
                         <!-- CHECKBOX -->
-                        <label class="form__label">Makanan yang Dikonsumsi</label>
-                        <div class="checkbox-group">
+                        <label class="form__label-lifestyle">Makanan yang Dikonsumsi</label>
+                        <div class="checkbox-group-lifestyle">
                             <label><input type="checkbox" name="makanan[]" value="Sayuran"> Sayuran</label>
                             <label><input type="checkbox" name="makanan[]" value="Buah-buahan"> Buah-buahan</label>
                             <label><input type="checkbox" name="makanan[]" value="Nasi Putih"> Nasi Putih</label>
@@ -51,8 +51,8 @@
                         </div>
                         <br>
 
-                        <label class="form__label">Olahraga yang Dilakukan</label>
-                        <div class="checkbox-group">
+                        <label class="form__label-lifestyle">Olahraga yang Dilakukan</label>
+                        <div class="checkbox-group-lifestyle">
                             <label><input type="checkbox" name="makanan[]" value="Lari"> Sayuran</label>
                             <label><input type="checkbox" name="makanan[]" value="Jalan Kaki"> Buah-buahan</label>
                             <label><input type="checkbox" name="makanan[]" value="Senam Ringan"> Nasi Putih</label>
@@ -61,8 +61,8 @@
                         </div>
                         <br>
 
-                        <label class="form__label">Aktivitas Harian</label>
-                        <div class="checkbox-group">
+                        <label class="form__label-lifestyle">Aktivitas Harian</label>
+                        <div class="checkbox-group-lifestyle">
                             <label><input type="checkbox" name="makanan[]" value="Berkerja didepan komputer"> Sayuran</label>
                             <label><input type="checkbox" name="makanan[]" value="Banyak duduk"> Buah-buahan</label>
                             <label><input type="checkbox" name="makanan[]" value="Aktif bergerak"> Nasi Putih</label>
@@ -72,15 +72,15 @@
                         <br>
                     </form>
                 </div>
-                <div class="kolom-hasil-ai card-container">
-                    <div class="hasil-ai__konten_good">
-                        <h2 class="hasil-ai__judul_good">Bagus!!</h2>
-                        <p class="hasil-ai__deskripsi">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+                <div class="kolom-hasil-ai-lifestyle card-ai-lifestyle">
+                    <div class="hasil-ai-lifestyle__konten_good">
+                        <h2 class="hasil-ai-lifestyle__judul_good">Bagus!!</h2>
+                        <p class="hasil-ai-lifestyle__deskripsi">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
                     </div>
-                    <div class="hasil-ai__gambar">
+                    <div class="hasil-ai-lifestyle__gambar">
                         <img src="{{ asset('images/good.jpg') }}" alt="Karakter Dokter AI"> 
                     </div>
-                    <button type="submit" form="form-prediksi" class="hasil-ai__tombol-generate btn-primary">Generate</button>
+                    <button type="submit" form="form-prediksi" class="hasil-ai-lifestyle__tombol-generate btn-primary">Generate</button>
                 </div>
             </div>
         </main>
