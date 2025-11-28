@@ -9,11 +9,11 @@
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
     <body>
-        <main class="bagian-fitur-utama">
-            <div class="container-salam-menu">
-                <div class="salam-pengguna">
-                    <h1 class="hero__judul-highlight">Profile</h1>
-                    <p class="salam__deskripsi">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+        <main class="container-utama-profile">
+            <div class="container-menu-profile">
+                <div class="container-judul-menu-profile">
+                    <h1 class="judul-menu-profile">Profile</h1>
+                    <p class="deskripsi__menu-profile">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
                 </div>
                 <div class="page-menu">
                     <div class="menu-item" onclick="window.location='{{ route('diabetes.page') }}'">
@@ -32,32 +32,32 @@
                     </div>
                 </div>
             </div>
-            <div class="wadah-prediksi">
-                <div class="kolom-input-form card-container">
+            <div class="container-form-profile">
+                <div class="kolom-input-form card-profile">
                     <form action="#" method="POST" class="form-prediksi">
-                        <h2 class="form__judul">Informasi Profile</h2>
-                        <p class="form__deskripsi">Isi form sesuai dengan hasil terakhir pengecekan dari dokter agar sistem dapat membantu memanajemen kondisi tubuh untuk pasien diabetes</p>
-                        <input type="text" name="nama" placeholder="Nama Lengkap" required class="form__input">
-                        <input type="email" name="email" placeholder="Email" required class="form__input">
-                        <input type="tel" name="telepon" placeholder="Nomor Telepon" required class="form__input">
-                        <select name="gender" class="form__select" required>
+                        <h2 class="form__judul-profile">Informasi Profile</h2>
+                        <p class="form__deskripsi-profile">Isi form sesuai dengan hasil terakhir pengecekan dari dokter agar sistem dapat membantu memanajemen kondisi tubuh untuk pasien diabetes</p>
+                        <input type="text" name="nama" placeholder="Nama Lengkap" required class="form__input-profile">
+                        <input type="email" name="email" placeholder="Email" required class="form__input-profile">
+                        <input type="tel" name="telepon" placeholder="Nomor Telepon" required class="form__input-profile">
+                        <select name="gender" class="form__select-profile" required>
                             <option value="" disabled selected>Pilih Jenis Kelamin</option>
                             <option value="male">Laki-laki</option>
                             <option value="female">Perempuan</option>
                         </select>
                         <div class="form-group-with-icon">
-                            <input type="password" name="password" id="password_input" placeholder="Password" class="form__input">
+                            <input type="password" name="password" id="password_input" placeholder="Password" class="form__input-profile">
                             <i class="fas fa-eye-slash password-toggle-icon" onclick="togglePasswordVisibility()"></i>  
                         </div>
                         <button type="submit" class="btn-primary btn-simpan">Simpan</button>
                     </form> 
                 </div>
-                <div class="kolom-hasil-ai card-container">
-                    <div class="hasil-ai__gambar">
-                        <img src="{{ asset('images/user.png') }}" alt="Karakter Dokter AI"> 
+                <div class="kolom-foto-profile card-foto-profile">
+                    <div class="foto-profile">
+                        <img src="{{ asset('images/user.png') }}" alt="Foto Profile"> 
                     </div>
-                    <button type="submit" form="form-prediksi" class="hasil-ai__tombol-generate btn-primary">Ganti Profile</button>
-                    <button type="submit" form="form-prediksi" class="btn_ganti-password btn-mid">Ubah Password</button>
+                    <button type="submit" form="form-prediksi" class="btn-ganti-profile btn-primary">Ganti Profile</button>
+                    <button type="submit" form="form-prediksi" class="btn-ganti-password btn-mid">Ubah Password</button>
                     <button type="button" class="btn-logout" title="Keluar Akun" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                     </button>
